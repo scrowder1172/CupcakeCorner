@@ -14,6 +14,7 @@
 		52BFBC812AFD5A41000C4D1D /* CodableAndURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BFBC802AFD5A41000C4D1D /* CodableAndURLSession.swift */; };
 		52BFBC842AFE960E000C4D1D /* AsynchronousExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BFBC832AFE960E000C4D1D /* AsynchronousExample.swift */; };
 		52BFBC862AFEAEAD000C4D1D /* ImageFromRemoteServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BFBC852AFEAEAD000C4D1D /* ImageFromRemoteServer.swift */; };
+		52BFBC882AFECCCC000C4D1D /* DisabledForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BFBC872AFECCCC000C4D1D /* DisabledForm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		52BFBC802AFD5A41000C4D1D /* CodableAndURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableAndURLSession.swift; sourceTree = "<group>"; };
 		52BFBC832AFE960E000C4D1D /* AsynchronousExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousExample.swift; sourceTree = "<group>"; };
 		52BFBC852AFEAEAD000C4D1D /* ImageFromRemoteServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFromRemoteServer.swift; sourceTree = "<group>"; };
+		52BFBC872AFECCCC000C4D1D /* DisabledForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisabledForm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				52BFBC802AFD5A41000C4D1D /* CodableAndURLSession.swift */,
 				52BFBC832AFE960E000C4D1D /* AsynchronousExample.swift */,
 				52BFBC852AFEAEAD000C4D1D /* ImageFromRemoteServer.swift */,
+				52BFBC872AFECCCC000C4D1D /* DisabledForm.swift */,
 			);
 			path = TutorialFiles;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 				52BFBC842AFE960E000C4D1D /* AsynchronousExample.swift in Sources */,
 				52BFBC752AFD5622000C4D1D /* ContentView.swift in Sources */,
 				52BFBC862AFEAEAD000C4D1D /* ImageFromRemoteServer.swift in Sources */,
+				52BFBC882AFECCCC000C4D1D /* DisabledForm.swift in Sources */,
 				52BFBC732AFD5622000C4D1D /* CupcakeCornerApp.swift in Sources */,
 				52BFBC812AFD5A41000C4D1D /* CodableAndURLSession.swift in Sources */,
 			);
