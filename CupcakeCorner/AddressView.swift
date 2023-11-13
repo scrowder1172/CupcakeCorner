@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct AddressView: View {
+    var order: Order
+    
     var body: some View {
-        Text("Address Details")
+        Text("Address Details...")
     }
 }
 
 #Preview {
-    AddressView()
+    AddressView(order: Order())
 }
