@@ -11,6 +11,8 @@ struct ContentView: View {
     
     @State private var order: Order = Order()
     
+    @State private var showingOrderDetails: Bool = false
+    
     var body: some View {
         NavigationStack {
             Form {
@@ -35,11 +37,74 @@ struct ContentView: View {
                 
                 Section("Delivery") {
                     NavigationLink("Delivery Details") {
-                        AddressView()
+                        AddressView(order: order)
                     }
                 }
             }
             .navigationTitle("Cupcake Corner")
+            .toolbar {
+                Button {
+                    showingOrderDetails = true
+                } label: {
+                    Label("See Order", systemImage: "printer.fill")
+                }
+            }
+            .sheet(isPresented: $showingOrderDetails) {
+                OrderDetails(order: order)
+            }
+        }
+    }
+}
+
+struct OrderDetails: View {
+    var order: Order
+    
+    @Environment(\.dismiss) var dismiss
+    
+    var body: some View {
+        VStack {
+            Text("Order Details:")
+                .font(.title)
+                .padding(.bottom)
+            Text("Cake Type: \(Order.types[order.type])")
+                .padding(.bottom)
+            
+            Text("Cupcake Quantity: \(order.quantity)")
+                .padding(.bottom)
+            
+            HStack {
+                Text("Special Requests:")
+                Image(systemName: order.specialRequestEnabled ? "checkmark.circle" : "x.circle")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+                    .foregroundStyle(order.specialRequestEnabled ? .green : .red)
+            }
+            .padding(.bottom)
+            
+            HStack {
+                Text("Extra Frosting:")
+                Image(systemName: order.extraFrosting ? "checkmark.circle" : "x.circle")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+                    .foregroundStyle(order.extraFrosting ? .green : .red)
+            }
+            .padding(.bottom)
+            
+            HStack {
+                Text("Add Sprinkles:")
+                Image(systemName: order.addSprinkles ? "checkmark.circle" : "x.circle")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+                    .foregroundStyle(order.addSprinkles ? .green : .red)
+            }
+            .padding(.bottom)
+            
+            Button("Done") {dismiss()}
+                .padding()
+                .frame(width: 200, height: 50)
+                .foregroundStyle(.white)
+                .background(.cyan)
+                .clipShape(.rect(cornerRadius: 20))
         }
     }
 }
