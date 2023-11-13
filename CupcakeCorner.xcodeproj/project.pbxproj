@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		524001B32B0290C40055758E /* HapticEffectsExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524001B22B0290C40055758E /* HapticEffectsExample.swift */; };
 		52BFBC732AFD5622000C4D1D /* CupcakeCornerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BFBC722AFD5622000C4D1D /* CupcakeCornerApp.swift */; };
 		52BFBC752AFD5622000C4D1D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BFBC742AFD5622000C4D1D /* ContentView.swift */; };
 		52BFBC772AFD5623000C4D1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52BFBC762AFD5623000C4D1D /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		524001B22B0290C40055758E /* HapticEffectsExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticEffectsExample.swift; sourceTree = "<group>"; };
 		52BFBC6F2AFD5622000C4D1D /* CupcakeCorner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CupcakeCorner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52BFBC722AFD5622000C4D1D /* CupcakeCornerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupcakeCornerApp.swift; sourceTree = "<group>"; };
 		52BFBC742AFD5622000C4D1D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				52BFBC832AFE960E000C4D1D /* AsynchronousExample.swift */,
 				52BFBC852AFEAEAD000C4D1D /* ImageFromRemoteServer.swift */,
 				52BFBC872AFECCCC000C4D1D /* DisabledForm.swift */,
+				524001B22B0290C40055758E /* HapticEffectsExample.swift */,
 			);
 			path = TutorialFiles;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 				52BFBC882AFECCCC000C4D1D /* DisabledForm.swift in Sources */,
 				52BFBC732AFD5622000C4D1D /* CupcakeCornerApp.swift in Sources */,
 				52BFBC812AFD5A41000C4D1D /* CodableAndURLSession.swift in Sources */,
+				524001B32B0290C40055758E /* HapticEffectsExample.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
