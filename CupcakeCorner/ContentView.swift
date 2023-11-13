@@ -8,19 +8,39 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var order: Order = Order()
+    
     var body: some View {
         NavigationStack {
-            NavigationLink("Go To Async Call", destination: AsynchronousExample())
-                .padding(.horizontal, 20)
-                .frame(width: 200, height: 200)
-                .border(.secondary)
-            NavigationLink("Go To Haptic Effect", destination: HapticEffectsExample())
-                .padding(.horizontal, 20)
-                .frame(width: 200, height: 200)
-                .border(.secondary)
-            
+            Form {
+                Section("Cake Info") {
+                    Picker("Select your cake type", selection: $order.type) {
+                        ForEach(Order.types.indices, id: \.self) {
+                            Text(Order.types[$0])
+                        }
+                    }
+                    
+                    Stepper("Number of cakes: \(order.quantity)", value: $order.quantity, in: 3...20)
+                }
+                
+                Section("Special Requests") {
+                    Toggle("Special Requests", isOn: $order.specialRequestEnabled)
+                    
+                    if order.specialRequestEnabled {
+                        Toggle("Add Extra Frosting", isOn: $order.extraFrosting)
+                        Toggle("Add Sprinkles", isOn: $order.addSprinkles)
+                    }
+                }
+                
+                Section("Delivery") {
+                    NavigationLink("Delivery Details") {
+                        AddressView()
+                    }
+                }
+            }
+            .navigationTitle("Cupcake Corner")
         }
-        .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
     }
 }
 
