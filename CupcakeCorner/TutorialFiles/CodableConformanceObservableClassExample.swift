@@ -7,12 +7,28 @@
 
 import SwiftUI
 
-struct CodableConformanceObservableClassExample: View {
+@Observable
+class ObservableUser: Codable {
+    enum CodingKeys: String, CodingKey {
+        case _name = "name"
+    }
+    
+    var name: String = "Taylor"
+}
+
+struct CodableObservableExample: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button("Encode Taylor", action: encodeTaylor)
+    }
+    
+    func encodeTaylor() {
+        let data: Data = try! JSONEncoder().encode(ObservableUser())
+        print(type(of: data))
+        let str = String(decoding: data, as: UTF8.self)
+        print(str)
     }
 }
 
 #Preview {
-    CodableConformanceObservableClassExample()
+    CodableObservableExample()
 }
