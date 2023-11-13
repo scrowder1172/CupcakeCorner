@@ -9,7 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        AsynchronousExample()
+        NavigationStack {
+            NavigationLink("Go To Async Call", destination: AsynchronousExample())
+                .padding(.horizontal, 20)
+                .frame(width: 200, height: 200)
+                .border(.secondary)
+            NavigationLink("Go To Haptic Effect", destination: HapticEffectsExample())
+                .padding(.horizontal, 20)
+                .frame(width: 200, height: 200)
+                .border(.secondary)
+            
+        }
+        .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
     }
 }
 
