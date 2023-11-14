@@ -58,7 +58,7 @@ struct OrderDetailsView: View {
                     
                     Text("Name: \(order.name)")
                         .padding(.bottom)
-                    Text("Street Address: \(order.streetAddres)")
+                    Text("Street Address: \(order.streetAddress)")
                         .padding(.bottom)
                     Text("City: \(order.city)")
                         .padding(.bottom)

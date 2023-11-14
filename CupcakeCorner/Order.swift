@@ -16,7 +16,7 @@ class Order: Codable {
         case _extraFrosting = "extraFrosting"
         case _addSprinkles = "addSprinkles"
         case _name = "name"
-        case _streetAddres = "streetAddres"
+        case _streetAddress = "streetAddress"
         case _city = "city"
         case _zipCode = "zipCode"
     }
@@ -38,12 +38,12 @@ class Order: Codable {
     var addSprinkles: Bool = false
     
     var name: String = ""
-    var streetAddres: String = ""
+    var streetAddress: String = ""
     var city: String = ""
     var zipCode: String = ""
     
     var hasValidAddress: Bool {
-        if name.isEmpty || streetAddres.isEmpty || city.isEmpty || zipCode.isEmpty {
+        if name.isEmpty || streetAddress.isEmpty || city.isEmpty || zipCode.isEmpty {
             return false
         }
         
