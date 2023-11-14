@@ -37,7 +37,7 @@ class Order: Codable {
     var extraFrosting: Bool = false
     var addSprinkles: Bool = false
     
-    var name: String = ""
+    var name: String
     var streetAddress: String = ""
     var city: String = ""
     var zipCode: String = ""
@@ -45,6 +45,22 @@ class Order: Codable {
     var hasValidAddress: Bool {
         if name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || streetAddress.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || city.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || zipCode.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             return false
+        }
+        
+        if let nameEncoded = try? JSONEncoder().encode(name) {
+            UserDefaults.standard.set(nameEncoded, forKey: "Name")
+        }
+        
+        if let streetAddressEncoded = try? JSONEncoder().encode(streetAddress) {
+            UserDefaults.standard.set(streetAddressEncoded, forKey: "StreetAddress")
+        }
+        
+        if let cityEncoded = try? JSONEncoder().encode(city) {
+            UserDefaults.standard.set(cityEncoded, forKey: "City")
+        }
+        
+        if let zipCodeEncoded = try? JSONEncoder().encode(zipCode) {
+            UserDefaults.standard.set(zipCodeEncoded, forKey: "ZipCode")
         }
         
         return true
@@ -68,5 +84,21 @@ class Order: Codable {
         }
         
         return cost
+    }
+    
+    init() {
+        name = Order.retrieveSavedSetting(property: "Name")
+        streetAddress = Order.retrieveSavedSetting(property: "StreetAddress")
+        city = Order.retrieveSavedSetting(property: "City")
+        zipCode = Order.retrieveSavedSetting(property: "ZipCode")
+    }
+    
+    static func retrieveSavedSetting(property: String) -> String {
+        if let savedSetting = UserDefaults.standard.data(forKey: property) {
+            if let decodedSetting = try? JSONDecoder().decode(String.self, from: savedSetting) {
+                return decodedSetting
+            }
+        }
+        return ""
     }
 }
