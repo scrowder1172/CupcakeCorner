@@ -12,6 +12,8 @@ struct CheckoutVIew: View {
     
     @State private var statusMessage: String = ""
     
+    @State private var showingOrderDetails: Bool = false
+    
     var body: some View {
         ScrollView {
             VStack {
@@ -42,6 +44,16 @@ struct CheckoutVIew: View {
         .navigationTitle("Order Details")
         .navigationBarTitleDisplayMode(.inline)
         .scrollBounceBehavior(.basedOnSize)
+        .toolbar {
+            Button {
+                showingOrderDetails = true
+            } label: {
+                Label("See Order", systemImage: "printer.fill")
+            }
+        }
+        .sheet(isPresented: $showingOrderDetails) {
+            OrderDetailsView(order: order)
+        }
     }
     
     func placeOrder() async {
